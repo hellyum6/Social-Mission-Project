@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#A1E5AB",
+                        "secondary": "#ADF6B1",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#131f15",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>말라리아 예방 및 인식 캠페인</title>
+</head>
+<script src="/js/main.js"></script>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-6 md:px-20 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">health_and_safety</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Malaria Awareness</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#info">정보</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#symptoms">증상</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#prevention">예방</a>
+</nav>
+<button class="flex min-w-[100px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-slate-900 text-sm font-bold transition-transform hover:scale-105 active:scale-95">
+                        상담하기
+                    </button>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</header>
+<main class="flex flex-col">
+<!-- Hero Section -->
+<section class="px-6 md:px-20 py-8">
+<div class="@container">
+<div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-6 text-center relative overflow-hidden" data-alt="Healthcare worker helping a family in a lush green environment" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBw7uWGgIhs8X-b3AziotIbSJSZqMxxNBHBvPF6Mo_L-BRBHnI8VZYZRmKuol7XRrT3dvfVb0JeTcbIaUt9dj_JoAll6isqTOfvUJBMDpfoAgzE9c9oC9hQxPJsVMsmCW1yx15a2UECrvo4BmvuHqWsLKKxYCuILjM70E-EPQnDM7-3CbOPZ_Nat9K1cNosMkMZJD84N7IRBbRvZtoTaGBsbk_MbQhsPzJEyYw7dxJgV16B1NocdVzuq1Bx8WEo3rGnEqbymG_6qi8");'>
+<div class="max-w-[800px] flex flex-col gap-4">
+<span class="bg-primary/20 text-primary px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest w-fit mx-auto backdrop-blur-sm border border-primary/30">Health Campaign 2024</span>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight">
+                                    건강한 내일을 위한<br/>말라리아 예방의 첫걸음
+                                </h1>
+<p class="text-white/90 text-base md:text-lg font-medium max-w-2xl mx-auto">
+                                    말라리아는 조기 발견과 예방이 가장 중요합니다. 우리 가족의 건강을 위해 지금 바로 확인하세요.
+                                </p>
+</div>
+<div class="flex gap-4 mt-4">
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-slate-900 text-base font-bold transition-all hover:shadow-lg hover:shadow-primary/20">
+                                    자세히 알아보기
+                                </button>
+<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-white/10 text-white text-base font-bold backdrop-blur-md border border-white/20 hover:bg-white/20 transition-all">
+                                    클리닉 찾기
+                                </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Information Summary Section -->
+<section class="px-6 md:px-20 py-16 max-w-[1200px] mx-auto" id="info">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<div class="inline-flex items-center gap-2 text-primary font-bold">
+<span class="material-symbols-outlined">info</span>
+<span>Information</span>
+</div>
+<h2 class="text-3xl font-bold leading-tight">대한민국 말라리아 현황</h2>
+<div class="prose prose-slate dark:prose-invert">
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">
+                                    말라리아를 일으키는 말라리아 원충은 <strong>얼룩날개 모기류(Anopheles species)</strong>에 속하는 암컷 모기에 의해서 전파되는데, 우리나라에서는 <strong>중국 얼룩날개 모기(Anopheles sinensis)</strong> 암컷이 말라리아 원충을 전파시킨다.
+                                </p>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed text-lg mt-4">
+                                    말라리아 원충에 감염된 모기에게 물린 후 인체에서 감염 증상이 나타날 때까지는 <strong>2주~수개월의 시간</strong>이 소요된다. 우리나라의 토착 말라리아는 <strong>3일열 원충(Plasmodium vivax)</strong>으로 1970년대에 사라졌다가 1993년 이후 다시 유행하기 시작하였다.
+                                </p>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-6 rounded-xl bg-primary/10 border border-primary/20 flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary text-4xl">bug_report</span>
+<h3 class="font-bold text-lg">매개 모기</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400">중국 얼룩날개 모기 암컷에 의해 전파</p>
+</div>
+<div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col gap-3">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400 text-4xl">schedule</span>
+<h3 class="font-bold text-lg">잠복기</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400">감염 후 2주에서 수개월 소요</p>
+</div>
+<div class="p-6 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex flex-col gap-3">
+<span class="material-symbols-outlined text-slate-600 dark:text-slate-400 text-4xl">history</span>
+<h3 class="font-bold text-lg">국내 역사</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400">1993년 이후 재유행 시작</p>
+</div>
+<div class="p-6 rounded-xl bg-primary/10 border border-primary/20 flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary text-4xl">biotech</span>
+<h3 class="font-bold text-lg">주요 원충</h3>
+<p class="text-sm text-slate-600 dark:text-slate-400">3일열 원충 (P. vivax)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Symptoms Section -->
+<section class="px-6 md:px-20 py-20 bg-slate-50 dark:bg-slate-900/50" id="symptoms">
+<div class="max-w-[1200px] mx-auto text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">전형적인 감염 증상</h2>
+<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                            말라리아는 원인 병원체의 종류에 따라 증상 및 특징이 다르게 나타날 수 있습니다. 
+                            다음과 같은 증상이 반복된다면 즉시 의료기관을 방문하십시오.
+                        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1000px] mx-auto">
+<!-- Chills -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center group hover:border-primary transition-colors">
+<div class="w-20 h-20 rounded-full bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center mb-6 text-blue-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">ac_unit</span>
+</div>
+<h3 class="text-xl font-bold mb-3">오한 (Chills)</h3>
+<p class="text-slate-600 dark:text-slate-400">몸이 떨리고 심한 추위를 느끼는 단계입니다.</p>
+</div>
+<!-- Fever -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center group hover:border-primary transition-colors">
+<div class="w-20 h-20 rounded-full bg-red-50 dark:bg-red-900/30 flex items-center justify-center mb-6 text-red-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">thermometer</span>
+</div>
+<h3 class="text-xl font-bold mb-3">발열 (Fever)</h3>
+<p class="text-slate-600 dark:text-slate-400">체온이 급격히 상승하며 고열이 지속됩니다.</p>
+</div>
+<!-- Sweating -->
+<div class="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 flex flex-col items-center text-center group hover:border-primary transition-colors">
+<div class="w-20 h-20 rounded-full bg-green-50 dark:bg-green-900/30 flex items-center justify-center mb-6 text-green-500 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">water_drop</span>
+</div>
+<h3 class="text-xl font-bold mb-3">발한 (Sweating)</h3>
+<p class="text-slate-600 dark:text-slate-400">열이 내리면서 심한 땀이 나는 단계입니다.</p>
+</div>
+</div>
+</section>
+<!-- Call to Action Section -->
+<section class="px-6 md:px-20 py-20">
+<div class="max-w-[1000px] mx-auto bg-primary rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-[200px]">vaccines</span>
+</div>
+<div class="relative z-10 text-center md:text-left">
+<h2 class="text-slate-900 text-3xl md:text-4xl font-black mb-4">말라리아로부터<br/>안전한 일상을 지키세요</h2>
+<p class="text-slate-800/80 font-medium text-lg">가까운 지정 의료기관에서 예방 수칙과 진단을 확인하실 수 있습니다.</p>
+</div>
+<div class="relative z-10 flex flex-col sm:flex-row gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-slate-900 text-white px-8 py-4 rounded-xl font-bold hover:bg-slate-800 transition-colors">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                                주변 클리닉 찾기
+                            </button>
+<button class="flex-1 md:flex-none flex items-center justify-center gap-2 bg-white text-slate-900 px-8 py-4 rounded-xl font-bold hover:bg-slate-50 transition-colors">
+                                예방 가이드 다운로드
+                            </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="px-6 md:px-20 py-12 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark">
+<div class="max-w-[1200px] mx-auto flex flex-col md:flex-row justify-between items-start gap-8">
+<div class="max-w-xs">
+<div class="flex items-center gap-2 text-primary mb-4">
+<span class="material-symbols-outlined">health_and_safety</span>
+<span class="font-bold">Malaria Awareness</span>
+</div>
+<p class="text-slate-500 text-sm">말라리아 없는 건강한 사회를 만들기 위해 정확한 정보와 예방 수칙을 전달합니다.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-8 w-full md:w-auto">
+<div>
+<h4 class="font-bold mb-4">서비스</h4>
+<ul class="text-sm text-slate-500 space-y-2">
+<li><a class="hover:text-primary" href="#">자가진단</a></li>
+<li><a class="hover:text-primary" href="#">클리닉 안내</a></li>
+<li><a class="hover:text-primary" href="#">긴급 연락</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-4">정보</h4>
+<ul class="text-sm text-slate-500 space-y-2">
+<li><a class="hover:text-primary" href="#">말라리아란?</a></li>
+<li><a class="hover:text-primary" href="#">예방 수칙</a></li>
+<li><a class="hover:text-primary" href="#">최신 뉴스</a></li>
+</ul>
+</div>
+<div class="col-span-2 sm:col-span-1">
+<h4 class="font-bold mb-4">연락처</h4>
+<p class="text-sm text-slate-500">질병관리청 콜센터: 1339</p>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">share</span>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer hover:text-primary">mail</span>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-[1200px] mx-auto mt-12 pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col sm:flex-row justify-between text-xs text-slate-400 gap-4">
+<p>© 2024 Malaria Awareness Campaign. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:underline" href="#">이용약관</a>
+<a class="hover:underline" href="#">개인정보처리방침</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</body></html>
