@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>연구 보고서 | FluLab</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#ADF6B1',
+          secondary: '#A1E5AB',
+          accent: '#A1E5AB',
+          dark: '#000000',
+          surface: '#F8F9FA'
+        },
+        fontFamily: {
+          sans: ['Inter', 'Noto Sans KR', 'sans-serif'],
+        },
+        borderRadius: {
+          'custom': '8px',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+  }
+  .medical-grid {
+    background-image: radial-gradient(#A1E5AB 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    opacity: 0.2;
+  }
+  .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(161, 229, 171, 0.3);
+  }
+  .member-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  .section-divider {
+    height: 2px;
+    background: linear-gradient(90deg, #A1E5AB, transparent);
+  }
+  /* 편집 모드 스타일 */
+  [contenteditable="true"] {
+    outline: none;
+    border-radius: 4px;
+    transition: background 0.2s;
+  }
+  [contenteditable="true"]:focus {
+    background: rgba(161, 229, 171, 0.08);
+    box-shadow: 0 0 0 2px rgba(161, 229, 171, 0.4);
+  }
+  [contenteditable="true"]:empty:before {
+    content: attr(data-placeholder);
+    color: #aaa;
+    pointer-events: none;
+  }
+  .edit-mode-badge {
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+</style>
+</head>
+<body class="antialiased">
+
+<!-- 헤더 -->
+<header class="fixed top-0 w-full z-50 glass-card border-b border-black/5">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 hover:opacity-70 transition-opacity">
+      <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center">
+        <span class="material-symbols-outlined text-dark text-lg">science</span>
+      </div>
+      <span class="font-bold text-xl tracking-tight text-dark">FLU<span class="text-secondary">LAB</span></span>
+    </a>
+    <div class="flex items-center gap-3">
+      <!-- 편집 모드 토글 (관리자만 사용) -->
+      <button id="edit-toggle" class="hidden items-center gap-2 px-4 py-2 rounded-custom text-sm font-bold border border-black/10 hover:bg-surface transition-all">
+        <span class="material-symbols-outlined text-base">edit</span>
+        편집 모드
+      </button>
+      <a href="index.html" class="bg-dark text-white px-5 py-2 rounded-custom font-bold text-sm hover:bg-secondary hover:text-dark transition-all">
+        ← 메인으로
+      </a>
+    </div>
+  </nav>
+</header>
+
+<!-- 히어로 -->
+<section class="relative pt-32 pb-16 overflow-hidden">
+  <div class="absolute inset-0 medical-grid"></div>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center">
+    <span class="inline-block py-1 px-3 rounded-full bg-secondary/20 text-dark text-xs font-bold tracking-widest uppercase mb-4">Research Report 2024</span>
+    <h1 class="text-4xl md:text-6xl font-black mb-4 text-dark">프로젝트 <span class="text-secondary">진행 과정</span></h1>
+    <p class="text-gray-500 font-medium">데이터 수집·분석 방법 및 팀원별 소감</p>
+  </div>
+</section>
+
+<!-- 데이터 수집 및 분석 방법 -->
+<section class="py-16 bg-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex items-center gap-3 mb-10">
+      <div class="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-dark">data_table</span>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Section 01</p>
+        <h2 class="text-2xl font-black text-dark">데이터 수집 및 분석 방법</h2>
+      </div>
+    </div>
+
+    <div class="section-divider mb-10"></div>
+
+    <!-- 수집 방법 -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+      <div class="glass-card rounded-custom p-6 border-t-4 border-t-secondary">
+        <div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-secondary">search</span>
+        </div>
+        <h3 class="font-bold text-dark mb-2">데이터 수집</h3>
+        <p id="data-collection" class="text-sm text-gray-600 leading-relaxed"
+           contenteditable="false"
+           data-placeholder="수집 방법을 입력하세요...">
+          WHO, CDC, 질병관리청(KDCA) 공공 보건 데이터베이스에서 최근 10년간의 인플루엔자 발생 통계, 백신 접종률, 변이 현황 데이터를 수집하였다. 또한 국내 학교 보건 통계 자료를 활용하여 연령별 감염 패턴을 분석하였다.
+        </p>
+      </div>
+      <div class="glass-card rounded-custom p-6 border-t-4 border-t-secondary">
+        <div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-secondary">analytics</span>
+        </div>
+        <h3 class="font-bold text-dark mb-2">분석 방법</h3>
+        <p id="data-analysis" class="text-sm text-gray-600 leading-relaxed"
+           contenteditable="false"
+           data-placeholder="분석 방법을 입력하세요...">
+          수집된 데이터를 바탕으로 시계열 분석 및 상관관계 분석을 실시하였다. 바이러스 변이율과 감염 확산 속도 간의 관계를 통계 모델로 도출하고, 계절별·연령별 유행 패턴을 시각화하였다.
+        </p>
+      </div>
+      <div class="glass-card rounded-custom p-6 border-t-4 border-t-secondary">
+        <div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
+          <span class="material-symbols-outlined text-secondary">verified</span>
+        </div>
+        <h3 class="font-bold text-dark mb-2">결과 검증</h3>
+        <p id="data-verify" class="text-sm text-gray-600 leading-relaxed"
+           contenteditable="false"
+           data-placeholder="검증 방법을 입력하세요...">
+          분석 결과의 신뢰성을 높이기 위해 복수의 데이터 출처를 교차 검증하였으며, 문헌 연구를 통해 기존 연구 결과와 비교·검토하는 과정을 거쳤다.
+        </p>
+      </div>
+    </div>
+
+    <!-- 상세 설명 -->
+    <div class="bg-surface rounded-custom p-8 border border-black/5">
+      <h3 class="font-bold text-dark mb-4 flex items-center gap-2">
+        <span class="w-6 h-px bg-secondary"></span>
+        상세 진행 과정
+      </h3>
+      <div id="detail-process" class="text-gray-600 leading-relaxed text-sm space-y-3"
+           contenteditable="false"
+           data-placeholder="상세 진행 과정을 입력하세요...">
+        <p>1단계로 연구 주제 선정 후 관련 선행 연구를 탐색하고 연구 방향을 설정하였다.</p>
+        <p>2단계에서는 공신력 있는 기관의 오픈 데이터를 수집하고 전처리 과정을 거쳐 분석 가능한 형태로 가공하였다.</p>
+        <p>3단계에서 통계 분석 도구를 활용하여 데이터 간 상관관계를 도출하고 핵심 인사이트를 정리하였다.</p>
+        <p>4단계에서 분석 결과를 바탕으로 실질적인 해결 방안을 제시하고 기대 효과를 시뮬레이션하였다.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 팀원 소감 -->
+<section class="py-16 bg-surface">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <div class="flex items-center gap-3 mb-10">
+      <div class="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0">
+        <span class="material-symbols-outlined text-dark">groups</span>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-gray-400">Section 02</p>
+        <h2 class="text-2xl font-black text-dark">팀원별 역할 및 소감</h2>
+      </div>
+    </div>
+
+    <div class="section-divider mb-10"></div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- 팀원 1 -->
+      <div class="member-card glass-card rounded-custom p-8 border border-black/5">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">1</div>
+          <div>
+            <h3 id="member1-name" class="font-black text-lg text-dark"
+                contenteditable="false"
+                data-placeholder="이름">팀원 1</h3>
+            <p id="member1-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
+               contenteditable="false"
+               data-placeholder="담당 역할">담당 역할</p>
+          </div>
+        </div>
+        <div class="section-divider mb-5"></div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
+          <p id="member1-task" class="text-sm text-gray-600 leading-relaxed mb-4"
+             contenteditable="false"
+             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
+          <p id="member1-review" class="text-sm text-gray-600 leading-relaxed"
+             contenteditable="false"
+             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+        </div>
+      </div>
+
+      <!-- 팀원 2 -->
+      <div class="member-card glass-card rounded-custom p-8 border border-black/5">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">2</div>
+          <div>
+            <h3 id="member2-name" class="font-black text-lg text-dark"
+                contenteditable="false"
+                data-placeholder="이름">팀원 2</h3>
+            <p id="member2-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
+               contenteditable="false"
+               data-placeholder="담당 역할">담당 역할</p>
+          </div>
+        </div>
+        <div class="section-divider mb-5"></div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
+          <p id="member2-task" class="text-sm text-gray-600 leading-relaxed mb-4"
+             contenteditable="false"
+             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
+          <p id="member2-review" class="text-sm text-gray-600 leading-relaxed"
+             contenteditable="false"
+             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+        </div>
+      </div>
+
+      <!-- 팀원 3 -->
+      <div class="member-card glass-card rounded-custom p-8 border border-black/5">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">3</div>
+          <div>
+            <h3 id="member3-name" class="font-black text-lg text-dark"
+                contenteditable="false"
+                data-placeholder="이름">팀원 3</h3>
+            <p id="member3-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
+               contenteditable="false"
+               data-placeholder="담당 역할">담당 역할</p>
+          </div>
+        </div>
+        <div class="section-divider mb-5"></div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
+          <p id="member3-task" class="text-sm text-gray-600 leading-relaxed mb-4"
+             contenteditable="false"
+             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
+          <p id="member3-review" class="text-sm text-gray-600 leading-relaxed"
+             contenteditable="false"
+             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+        </div>
+      </div>
+
+      <!-- 팀원 4 -->
+      <div class="member-card glass-card rounded-custom p-8 border border-black/5">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">4</div>
+          <div>
+            <h3 id="member4-name" class="font-black text-lg text-dark"
+                contenteditable="false"
+                data-placeholder="이름">팀원 4</h3>
+            <p id="member4-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
+               contenteditable="false"
+               data-placeholder="담당 역할">담당 역할</p>
+          </div>
+        </div>
+        <div class="section-divider mb-5"></div>
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
+          <p id="member4-task" class="text-sm text-gray-600 leading-relaxed mb-4"
+             contenteditable="false"
+             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+          <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
+          <p id="member4-review" class="text-sm text-gray-600 leading-relaxed"
+             contenteditable="false"
+             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 푸터 -->
+<footer class="py-12 border-t border-black/5 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 bg-secondary rounded-full"></div>
+        <span class="font-bold tracking-tight text-dark uppercase">Flu<span class="text-secondary">Lab</span> 2024</span>
+      </div>
+      <div class="text-gray-500 text-sm font-medium">과학 및 보건 연구 프로젝트 • 학술적 우수성 지향</div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Firebase 인증 + 편집 모드 -->
+<script type="module">
+  import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
+  import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
+  import { getFirestore, doc, getDoc, setDoc } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDsUdVnU9PGosK0nBpOyXXAuOdXSsVW6G0",
+    authDomain: "social-78bbb.firebaseapp.com",
+    projectId: "social-78bbb",
+    storageBucket: "social-78bbb.appspot.com",
+    messagingSenderId: "832025072632",
+    appId: "1:832025072632:web:bd964291087ecb42613c0d"
+  };
+
+  const ADMIN_UID = 'iOJRo3J9vbSrzApJ9vJODFeGByI3';
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  const editToggle = document.getElementById('edit-toggle');
+  const editableEls = document.querySelectorAll('[contenteditable]');
+  let isEditMode = false;
+
+  // Firestore에서 저장된 내용 불러오기
+  async function loadContent() {
+    try {
+      const docSnap = await getDoc(doc(db, 'report', 'content'));
+      if (docSnap.exists()) {
+        const data = docSnap.data();
+        editableEls.forEach(el => {
+          if (data[el.id]) el.innerHTML = data[el.id];
+        });
+      }
+    } catch (e) {
+      console.log('내용 불러오기 실패:', e);
+    }
+  }
+
+  // Firestore에 저장
+  async function saveContent() {
+    const data = {};
+    editableEls.forEach(el => { data[el.id] = el.innerHTML; });
+    try {
+      await setDoc(doc(db, 'report', 'content'), data);
+      showToast('저장 완료! ✓');
+    } catch (e) {
+      showToast('저장 실패 ✗');
+    }
+  }
+
+  // 토스트 알림
+  function showToast(msg) {
+    const t = document.createElement('div');
+    t.className = 'fixed bottom-6 right-6 bg-dark text-white px-5 py-3 rounded-custom font-bold text-sm z-50 shadow-xl';
+    t.textContent = msg;
+    document.body.appendChild(t);
+    setTimeout(() => t.remove(), 2500);
+  }
+
+  // 편집 모드 토글
+  editToggle.addEventListener('click', () => {
+    isEditMode = !isEditMode;
+    editableEls.forEach(el => {
+      el.contentEditable = isEditMode ? 'true' : 'false';
+    });
+    if (isEditMode) {
+      editToggle.innerHTML = '<span class="material-symbols-outlined text-base">save</span> 저장하기';
+      editToggle.classList.add('bg-secondary', 'text-dark', 'border-secondary');
+    } else {
+      editToggle.innerHTML = '<span class="material-symbols-outlined text-base">edit</span> 편집 모드';
+      editToggle.classList.remove('bg-secondary', 'text-dark', 'border-secondary');
+      saveContent();
+    }
+  });
+
+  // 관리자 로그인 감지
+  onAuthStateChanged(auth, (user) => {
+    if (user && user.uid === ADMIN_UID) {
+      editToggle.classList.remove('hidden');
+      editToggle.classList.add('flex');
+    } else {
+      editToggle.classList.add('hidden');
+      editToggle.classList.remove('flex');
+    }
+  });
+
+  loadContent();
+</script>
+
+</body>
+</html>
