@@ -418,11 +418,7 @@ SDG 3: 건강과 웰빙
 <div class="text-center mb-12">
 <h2 class="text-3xl font-black mb-4 text-dark">연구 커뮤니티 게시판</h2>
 <p class="text-gray-600 font-medium">본 연구에 대한 생각, 제안 또는 질문을 자유롭게 공유해 주세요.</p>
-<!-- 실시간 접속자 표시 -->
-<div class="inline-flex items-center gap-2 mt-3 px-3 py-1 bg-white rounded-full border border-black/5 shadow-sm">
-  <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-  <span class="text-xs font-bold text-gray-500" id="online-count">실시간 연결 중...</span>
-</div>
+
 </div>
 
 <!-- 로그인 전 화면 -->
@@ -620,8 +616,8 @@ SDG 3: 건강과 웰빙
             <span class="material-symbols-outlined" style="font-size:13px">delete</span>삭제
            </button>`
         : '';
-      const isAdmin = currentUser && currentUser.uid === ADMIN_UID && d.authorId !== currentUser.uid;
-      const adminBadge = isAdmin ? `<span class="text-[9px] bg-red-100 text-red-500 font-bold px-1 py-0.5 rounded ml-1">관리자</span>` : '';
+      const isAdminComment = d.authorId === ADMIN_UID;
+      const adminBadge = isAdminComment ? `<span class="text-[9px] bg-red-100 text-red-500 font-bold px-1 py-0.5 rounded ml-1">관리자</span>` : '';
       return `
         <div id="comment-${docSnap.id}" class="border-b border-black/5 pb-5 last:border-0 last:pb-0">
           <div class="flex items-start gap-3">
