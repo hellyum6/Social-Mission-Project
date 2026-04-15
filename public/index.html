@@ -76,9 +76,20 @@
 <li><a class="hover:text-secondary transition-colors" href="#solutions">해결 방안</a></li>
 <li><a class="hover:text-secondary transition-colors" href="#impact">기대 효과</a></li>
 </ul>
-<a href="report.html" class="bg-dark text-white px-5 py-2 rounded-custom font-bold text-sm hover:bg-secondary hover:text-dark transition-all">
-        보고서 보기
-      </a>
+<div class="flex items-center gap-3">
+  <!-- 로그인/로그아웃 버튼 -->
+  <button id="header-login-btn" class="hidden items-center gap-2 px-4 py-2 rounded-custom font-bold text-sm border border-black/10 hover:bg-surface transition-all">
+    <svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="currentColor" d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/></svg>
+    로그인
+  </button>
+  <div id="header-user" class="hidden items-center gap-2">
+    <img id="header-avatar" src="" alt="avatar" class="w-8 h-8 rounded-full border border-secondary/40 object-cover"/>
+    <button id="header-logout-btn" class="text-xs text-gray-400 hover:text-dark font-bold transition-colors underline">로그아웃</button>
+  </div>
+  <a href="report.html" class="bg-dark text-white px-5 py-2 rounded-custom font-bold text-sm hover:bg-secondary hover:text-dark transition-all">
+    보고서 보기
+  </a>
+</div>
 </nav>
 </header>
 <!-- END: MainHeader -->
@@ -422,14 +433,9 @@ SDG 3: 건강과 웰빙
 </div>
 
 <!-- 로그인 전 화면 -->
-<div id="auth-section" class="glass-card rounded-custom p-8 border border-black/5 shadow-lg mb-6 text-center">
-  <span class="material-symbols-outlined text-4xl text-secondary mb-3 block">login</span>
-  <h3 class="font-bold text-lg mb-2 text-dark">Google 계정으로 참여하기</h3>
-  <p class="text-sm text-gray-500 mb-5 font-medium">댓글 작성을 위해 Google 계정으로 로그인해주세요.</p>
-  <button id="login-btn" class="inline-flex items-center gap-2 px-6 py-3 bg-dark text-white font-bold rounded-custom hover:bg-secondary hover:text-dark transition-all">
-    <svg class="w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M12.545 10.239v3.821h5.445c-.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-.013z"/></svg>
-    Google로 로그인
-  </button>
+<div id="auth-section" class="glass-card rounded-custom p-6 border border-black/5 shadow-lg mb-6 text-center hidden">
+  <span class="material-symbols-outlined text-3xl text-secondary mb-2 block">lock</span>
+  <p class="text-sm font-bold text-dark">댓글 작성을 위해 우측 상단에서 로그인해주세요.</p>
 </div>
 
 <!-- 로그인 후: 댓글 작성 폼 -->
@@ -504,21 +510,25 @@ SDG 3: 건강과 웰빙
   let currentUser = null;
 
   // ── DOM 요소 ───────────────────────────────────────────────
-  const authSection   = document.getElementById('auth-section');
-  const postSection   = document.getElementById('post-section');
-  const loginBtn      = document.getElementById('login-btn');
-  const logoutBtn     = document.getElementById('logout-btn');
-  const userAvatar    = document.getElementById('user-avatar');
-  const userName      = document.getElementById('user-name');
-  const commentInput  = document.getElementById('comment-input');
-  const submitBtn     = document.getElementById('submit-btn');
-  const commentsList  = document.getElementById('comments-list');
-  const commentCount  = document.getElementById('comment-count');
-  const onlineCount   = document.getElementById('online-count');
-  const loadingEl     = document.getElementById('loading-comments');
+  const authSection        = document.getElementById('auth-section');
+  const postSection        = document.getElementById('post-section');
+  const loginBtn           = document.getElementById('login-btn');
+  const logoutBtn          = document.getElementById('logout-btn');
+  const userAvatar         = document.getElementById('user-avatar');
+  const userName           = document.getElementById('user-name');
+  const commentInput       = document.getElementById('comment-input');
+  const submitBtn          = document.getElementById('submit-btn');
+  const commentsList       = document.getElementById('comments-list');
+  const commentCount       = document.getElementById('comment-count');
+  const loadingEl          = document.getElementById('loading-comments');
+  // 헤더 로그인
+  const headerLoginBtn     = document.getElementById('header-login-btn');
+  const headerUser         = document.getElementById('header-user');
+  const headerAvatar       = document.getElementById('header-avatar');
+  const headerLogoutBtn    = document.getElementById('header-logout-btn');
 
   // ── 구글 로그인 ────────────────────────────────────────────
-  loginBtn.addEventListener('click', async () => {
+  const doLogin = async () => {
     const provider = new GoogleAuthProvider();
     try {
       await signInWithPopup(auth, provider);
@@ -526,9 +536,10 @@ SDG 3: 건강과 웰빙
       console.error('로그인 오류:', e);
       alert('로그인 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
     }
-  });
-
+  };
+  headerLoginBtn.addEventListener('click', doLogin);
   logoutBtn.addEventListener('click', () => signOut(auth));
+  headerLogoutBtn.addEventListener('click', () => signOut(auth));
 
   // ── 인증 상태 감지 ─────────────────────────────────────────
   onAuthStateChanged(auth, (user) => {
@@ -538,6 +549,10 @@ SDG 3: 건강과 웰빙
       postSection.classList.remove('hidden');
       userAvatar.src = user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName)}&background=A1E5AB&color=000`;
       userName.textContent = user.displayName || user.email;
+      // 헤더
+      headerLoginBtn.classList.add('hidden'); headerLoginBtn.classList.remove('flex');
+      headerUser.classList.remove('hidden'); headerUser.classList.add('flex');
+      headerAvatar.src = user.photoURL || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.displayName)}&background=A1E5AB&color=000`;
 
       // 실시간 온라인 존재 감지
       const uid = user.uid;
@@ -547,6 +562,9 @@ SDG 3: 건강과 웰빙
     } else {
       authSection.classList.remove('hidden');
       postSection.classList.add('hidden');
+      // 헤더
+      headerLoginBtn.classList.remove('hidden'); headerLoginBtn.classList.add('flex');
+      headerUser.classList.add('hidden'); headerUser.classList.remove('flex');
     }
   });
 
