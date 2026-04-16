@@ -54,7 +54,6 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    /* SEIR simulation styles - scoped inside .seir-wrapper */
     .seir-wrapper * { box-sizing: border-box; }
     
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -69,7 +68,6 @@
   h1 { font-size: 22px; font-weight: 500; margin-bottom: 4px; }
   .sub { font-size: 13px; color: #888780; margin-bottom: 1.5rem; }
 
-  /* Metric cards */
   .grid-metrics {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -87,7 +85,6 @@
   .metric-value.peak { color: #D85A30; }
   .metric-value.total { color: #0F6E56; }
 
-  /* Chart */
   .chart-card {
     background: #fff;
     border-radius: 12px;
@@ -112,7 +109,6 @@
   }
   .chart-wrap { position: relative; width: 100%; height: 340px; }
 
-  /* Control panel */
   .panel {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -161,7 +157,6 @@
   }
   .slider-val { font-size: 13px; font-weight: 500; min-width: 52px; text-align: right; }
 
-  /* Reference */
   .ref {
     font-size: 11px;
     color: #B4B2A9;
@@ -177,7 +172,6 @@
     .panel { grid-template-columns: 1fr; }
     .grid-metrics { grid-template-columns: repeat(2, 1fr); }
   }
-
   </style>
 </head>
 <body class="antialiased text-dark">
@@ -194,8 +188,8 @@
 <li><a class="hover:text-secondary transition-colors" href="#problem">문제 인식</a></li>
 <li><a class="hover:text-secondary transition-colors" href="#motivation">선정 동기</a></li>
 <li><a class="hover:text-secondary transition-colors" href="#analysis">원인 분석</a></li>
+<li><a class="hover:text-secondary transition-colors" href="#impact">시뮬레이션</a></li>
 <li><a class="hover:text-secondary transition-colors" href="#solutions">해결 방안</a></li>
-<li><a class="hover:text-secondary transition-colors" href="#impact">기대 효과</a></li>
 </ul>
 <div class="flex items-center gap-3">
   <button id="header-login-btn" class="hidden items-center gap-2 px-4 py-2 rounded-custom font-bold text-sm border border-black/10 hover:bg-surface transition-all">
@@ -234,6 +228,7 @@
 </div>
 </section>
 <!-- END: HeroSection -->
+
 <!-- BEGIN: Problem Awareness -->
 <section class="py-24 bg-surface" id="problem">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -260,6 +255,7 @@ SDG 3: 건강과 웰빙
 </div>
 </section>
 <!-- END: Problem Awareness -->
+
 <!-- BEGIN: Motivation -->
 <section class="py-24 bg-white" id="motivation">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -293,6 +289,7 @@ SDG 3: 건강과 웰빙
 </div>
 </section>
 <!-- END: Motivation -->
+
 <!-- BEGIN: Analysis -->
 <section class="py-24 bg-surface" id="analysis">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -332,45 +329,12 @@ SDG 3: 건강과 웰빙
 </div>
 </section>
 <!-- END: Analysis -->
-<!-- BEGIN: Solutions -->
-<section class="py-24 bg-white" id="solutions">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-<div class="max-w-xl">
-<h2 class="text-3xl font-black mb-4 text-dark">감염병 예방 솔루션</h2>
-<p class="text-gray-600 font-medium">인플루엔자 확산 방지를 위해 연구팀은 다각도의 대응 전략을 제안합니다.</p>
-</div>
-<div class="flex gap-2">
-<div class="w-12 h-1 border-t-4 border-secondary"></div>
-<div class="w-6 h-1 border-t-4 border-black/10"></div>
-</div>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="p-6 border border-black/5 bg-surface rounded-custom hover:border-secondary transition-colors shadow-sm">
-<span class="text-secondary text-xs font-bold font-mono mb-4 block">01 / SURVEILLANCE</span>
-<h4 class="text-lg font-bold mb-3 text-dark">AI 기반 변이 감시</h4>
-<p class="text-gray-500 text-sm leading-relaxed">머신러닝 모델을 사용하여 바이러스의 변이 패턴을 예측하고 선제적 백신 설계를 지원합니다.</p>
-</div>
-<div class="p-6 border border-black/5 bg-surface rounded-custom hover:border-secondary transition-colors shadow-sm">
-<span class="text-secondary text-xs font-bold font-mono mb-4 block">02 / TECHNOLOGY</span>
-<h4 class="text-lg font-bold mb-3 text-dark">mRNA 플랫폼 확장</h4>
-<p class="text-gray-500 text-sm leading-relaxed">첨단 mRNA 기술을 활용하여 백신 생산 기간을 6개월에서 6주로 획기적으로 단축합니다.</p>
-</div>
-<div class="p-6 border border-black/5 bg-surface rounded-custom hover:border-secondary transition-colors shadow-sm">
-<span class="text-secondary text-xs font-bold font-mono mb-4 block">03 / LOGISTICS</span>
-<h4 class="text-lg font-bold mb-3 text-dark">스마트 콜드 체인</h4>
-<p class="text-gray-500 text-sm leading-relaxed">IoT 기반 보관 장치를 통해 유통 전 과정에서 백신의 효능을 완벽하게 유지합니다.</p>
-</div>
-<div class="p-6 border border-black/5 bg-surface rounded-custom hover:border-secondary transition-colors shadow-sm">
-<span class="text-secondary text-xs font-bold font-mono mb-4 block">04 / EDUCATION</span>
-<h4 class="text-lg font-bold mb-3 text-dark">인식 개선 허브</h4>
-<p class="text-gray-500 text-sm leading-relaxed">커뮤니티 기반 디지털 교육 도구로 백신 거부감을 해소하고 올바른 정보를 확산합니다.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- END: Solutions -->
-<!-- BEGIN: ExecutionImpact -->
+
+<!-- =====================================================
+     순서 변경: 시뮬레이션(impact) → 솔루션(solutions)
+     ===================================================== -->
+
+<!-- BEGIN: ExecutionImpact (시뮬레이션 — 먼저 배치) -->
 <section class="py-24 relative overflow-hidden bg-surface" id="impact">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="glass-card rounded-3xl p-8 lg:p-12 overflow-hidden relative shadow-xl">
@@ -402,7 +366,6 @@ SDG 3: 건강과 웰빙
   <h1>인플루엔자 SEIR 확산 모델 시뮬레이션</h1>
   <p class="sub">논문 기반 기본값 · 마스크 · 사회적 거리두기 · 백신 개입 효과 조정 가능</p>
 
-  <!-- Metric cards -->
   <div class="grid-metrics">
     <div class="metric">
       <div class="metric-label">최대 감염자 (피크)</div>
@@ -422,7 +385,6 @@ SDG 3: 건강과 웰빙
     </div>
   </div>
 
-  <!-- Chart -->
   <div class="chart-card">
     <div class="legend">
       <span><span class="leg-dot" style="background:#378ADD"></span>감수성자 (S)</span>
@@ -431,79 +393,61 @@ SDG 3: 건강과 웰빙
       <span><span class="leg-dot" style="background:#1D9E75"></span>회복/면역 (R)</span>
     </div>
     <div class="chart-wrap">
-      <canvas id="seirChart"
-        role="img"
-        aria-label="SEIR 모델 기반 인플루엔자 일별 감염자 수 시뮬레이션 그래프">
-      </canvas>
+      <canvas id="seirChart" role="img" aria-label="SEIR 모델 기반 인플루엔자 일별 감염자 수 시뮬레이션 그래프"></canvas>
     </div>
   </div>
 
-  <!-- Control panel -->
   <div class="panel">
-
-    <!-- Left: epidemiological parameters -->
     <div class="panel-card">
       <div class="section-title">기본 역학 파라미터</div>
-
       <div class="slider-row">
         <div class="slider-label">인구수 (N)<small>단위: 명</small></div>
         <input type="range" id="sl-N" min="10000" max="1000000" step="10000" value="100000">
         <span class="slider-val" id="v-N">100,000</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">기본 재생산지수 (R₀)<small>계절독감 1.2–1.4 / 팬데믹 2–3</small></div>
         <input type="range" id="sl-R0" min="0.5" max="4.0" step="0.1" value="1.3">
         <span class="slider-val" id="v-R0">1.3</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">잠복기 (1/σ)<small>평균 약 2일 (범위 1–4일)</small></div>
         <input type="range" id="sl-sigma" min="1" max="7" step="0.5" value="2">
         <span class="slider-val" id="v-sigma">2일</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">감염 지속기간 (1/γ)<small>평균 약 4일 (범위 3–7일)</small></div>
         <input type="range" id="sl-gamma" min="1" max="10" step="0.5" value="4">
         <span class="slider-val" id="v-gamma">4일</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">시뮬레이션 기간<small>단위: 일</small></div>
         <input type="range" id="sl-days" min="30" max="365" step="5" value="180">
         <span class="slider-val" id="v-days">180일</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">초기 감염자 수 (I₀)<small>시뮬레이션 씨드값</small></div>
         <input type="range" id="sl-I0" min="1" max="500" step="1" value="10">
         <span class="slider-val" id="v-I0">10명</span>
       </div>
     </div>
-
-    <!-- Right: intervention parameters -->
     <div class="panel-card">
       <div class="section-title">방역 개입 효과</div>
-
       <div class="slider-row">
         <div class="slider-label">마스크 착용률<small>전파 감소 최대 ~40% (WHO, 2020)</small></div>
         <input type="range" id="sl-mask" min="0" max="100" step="5" value="0">
         <span class="slider-val" id="v-mask">0%</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">사회적 거리두기<small>접촉률 감소 최대 ~60% (Prem et al.)</small></div>
         <input type="range" id="sl-dist" min="0" max="100" step="5" value="0">
         <span class="slider-val" id="v-dist">0%</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">백신 접종률<small>접종 완료 인구 비율</small></div>
         <input type="range" id="sl-vax" min="0" max="100" step="5" value="0">
         <span class="slider-val" id="v-vax">0%</span>
       </div>
-
       <div class="slider-row">
         <div class="slider-label">백신 효능 (VE)<small>독감 백신 평균 50–70% (CDC)</small></div>
         <input type="range" id="sl-ve" min="10" max="90" step="5" value="60">
@@ -512,7 +456,6 @@ SDG 3: 건강과 웰빙
     </div>
   </div>
 
-  <!-- References -->
   <div class="ref">
     <strong>참고 문헌</strong><br>
     Ferguson et al. (2005) <em>Nature</em> 442 — R₀ 및 인플루엔자 역학 파라미터<br>
@@ -525,85 +468,46 @@ SDG 3: 건강과 웰빙
   </div>
 </div>
 
-<!-- Chart.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
 <script>
-/**
- * SEIR 모델 수치 적분 (오일러 방법, 일별 step)
- *
- * 상태변수:
- *   S : 감수성자 (Susceptible)
- *   E : 잠복기 (Exposed)
- *   I : 감염자 (Infectious)
- *   R : 회복/면역 (Recovered)
- *
- * 미분방정식:
- *   dS/dt = -β * S * I / N
- *   dE/dt =  β * S * I / N  - σ * E
- *   dI/dt =  σ * E           - γ * I
- *   dR/dt =  γ * I
- *
- * 개입 효과:
- *   β_eff = β * (1 - mask_reduction) * (1 - dist_reduction)
- *   초기 면역 인구 = vaxPct * VE * N  (R 초기값에 추가)
- *
- * 파라미터 (계절 독감 기본값):
- *   R₀ = 1.3   (Ferguson et al., Nature 2005)
- *   1/σ = 2일  (CDC Influenza Surveillance)
- *   1/γ = 4일  (WHO Influenza Fact Sheet)
- */
 function runSEIR(N, R0, sigmaInv, gammaInv, days, maskPct, distPct, vaxPct, VE, I0) {
   const sigma = 1 / sigmaInv;
   const gamma = 1 / gammaInv;
-
-  // 마스크: 최대 40% 감소 (Jefferson et al., Cochrane 2009)
-  // 거리두기: 최대 60% 감소 (Prem et al., Lancet Public Health 2020)
   const maskEff  = 0.40;
   const distEff  = 0.60;
   const betaBase = R0 * gamma;
   const reduction = (maskPct / 100 * maskEff) + (distPct / 100 * distEff);
   const beta = betaBase * Math.max(1 - reduction, 0.05);
-
-  // 백신: 접종률 × 효능 비율만큼 초기 면역 인구
   const immunized = Math.round(vaxPct / 100 * VE / 100 * N);
-
   let S = N - I0 - immunized;
   let E = 0;
   let I = I0;
   let R = immunized;
-
   const sArr = [Math.round(S)];
   const eArr = [Math.round(E)];
   const iArr = [Math.round(I)];
   const rArr = [Math.round(R)];
-
   for (let d = 1; d <= days; d++) {
-    const newInfected  = beta * S * I / N;  // S → E
-    const newInfectious = sigma * E;         // E → I
-    const newRecovered  = gamma * I;         // I → R
-
+    const newInfected  = beta * S * I / N;
+    const newInfectious = sigma * E;
+    const newRecovered  = gamma * I;
     S = Math.max(S - newInfected, 0);
     E = Math.max(E + newInfected - newInfectious, 0);
     I = Math.max(I + newInfectious - newRecovered, 0);
     R = Math.min(R + newRecovered, N);
-
     sArr.push(Math.round(S));
     eArr.push(Math.round(E));
     iArr.push(Math.round(I));
     rArr.push(Math.round(R));
   }
-
   const peakI   = Math.max(...iArr);
   const peakDay = iArr.indexOf(peakI);
-  const finalInfected = rArr[rArr.length - 1] - immunized; // 백신 면역 제외
-  const Re = beta / gamma * (S / N); // 시뮬레이션 종료 시점 기준
-
+  const finalInfected = rArr[rArr.length - 1] - immunized;
+  const Re = beta / gamma * (S / N);
   return { sArr, eArr, iArr, rArr, peakI, peakDay, finalInfected, Re };
 }
 
-// ---- 슬라이더 ID 목록 ----
 const SLIDERS = ['N','R0','sigma','gamma','days','mask','dist','vax','ve','I0'];
-
 let chart = null;
 
 function getVal(id) {
@@ -611,18 +515,17 @@ function getVal(id) {
 }
 
 function update() {
-  const N       = getVal('N');
-  const R0      = getVal('R0');
-  const sigma   = getVal('sigma');   // 잠복기 (일)
-  const gamma   = getVal('gamma');   // 감염기간 (일)
-  const days    = getVal('days');
-  const mask    = getVal('mask');
-  const dist    = getVal('dist');
-  const vax     = getVal('vax');
-  const ve      = getVal('ve');
-  const I0      = getVal('I0');
+  const N     = getVal('N');
+  const R0    = getVal('R0');
+  const sigma = getVal('sigma');
+  const gamma = getVal('gamma');
+  const days  = getVal('days');
+  const mask  = getVal('mask');
+  const dist  = getVal('dist');
+  const vax   = getVal('vax');
+  const ve    = getVal('ve');
+  const I0    = getVal('I0');
 
-  // 슬라이더 표시값 업데이트
   document.getElementById('v-N').textContent     = Math.round(N).toLocaleString('ko-KR');
   document.getElementById('v-R0').textContent    = R0.toFixed(1);
   document.getElementById('v-sigma').textContent = sigma + '일';
@@ -634,10 +537,8 @@ function update() {
   document.getElementById('v-ve').textContent    = ve + '%';
   document.getElementById('v-I0').textContent    = Math.round(I0).toLocaleString('ko-KR') + '명';
 
-  // SEIR 계산
   const res = runSEIR(N, R0, sigma, gamma, days, mask, dist, vax, ve, I0);
 
-  // 지표 카드 업데이트
   document.getElementById('m-peak').textContent    = Math.round(res.peakI).toLocaleString('ko-KR') + '명';
   document.getElementById('m-peakday').textContent = res.peakDay + '일째';
   document.getElementById('m-attack').textContent  = (res.finalInfected / N * 100).toFixed(1) + '%';
@@ -651,98 +552,28 @@ function update() {
       data: {
         labels,
         datasets: [
-          {
-            label: '감수성자 (S)',
-            data: res.sArr,
-            borderColor: '#378ADD',
-            backgroundColor: 'rgba(55,138,221,0.07)',
-            borderWidth: 1.5,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: '잠복기 (E)',
-            data: res.eArr,
-            borderColor: '#EF9F27',
-            backgroundColor: 'rgba(239,159,39,0.07)',
-            borderWidth: 1.5,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: '감염자 (I)',
-            data: res.iArr,
-            borderColor: '#E24B4A',
-            backgroundColor: 'rgba(226,75,74,0.10)',
-            borderWidth: 2,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: '회복/면역 (R)',
-            data: res.rArr,
-            borderColor: '#1D9E75',
-            backgroundColor: 'rgba(29,158,117,0.07)',
-            borderWidth: 1.5,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          }
+          { label: '감수성자 (S)', data: res.sArr, borderColor: '#378ADD', backgroundColor: 'rgba(55,138,221,0.07)', borderWidth: 1.5, pointRadius: 0, fill: true, tension: 0.3 },
+          { label: '잠복기 (E)',   data: res.eArr, borderColor: '#EF9F27', backgroundColor: 'rgba(239,159,39,0.07)',  borderWidth: 1.5, pointRadius: 0, fill: true, tension: 0.3 },
+          { label: '감염자 (I)',   data: res.iArr, borderColor: '#E24B4A', backgroundColor: 'rgba(226,75,74,0.10)',   borderWidth: 2,   pointRadius: 0, fill: true, tension: 0.3 },
+          { label: '회복/면역 (R)',data: res.rArr, borderColor: '#1D9E75', backgroundColor: 'rgba(29,158,117,0.07)',  borderWidth: 1.5, pointRadius: 0, fill: true, tension: 0.3 }
         ]
       },
       options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 150 },
+        responsive: true, maintainAspectRatio: false, animation: { duration: 150 },
         plugins: {
           legend: { display: false },
-          tooltip: {
-            mode: 'index',
-            intersect: false,
-            callbacks: {
-              label: ctx =>
-                ' ' + ctx.dataset.label + ': ' +
-                Math.round(ctx.parsed.y).toLocaleString('ko-KR') + '명'
-            }
+          tooltip: { mode: 'index', intersect: false,
+            callbacks: { label: ctx => ' ' + ctx.dataset.label + ': ' + Math.round(ctx.parsed.y).toLocaleString('ko-KR') + '명' }
           }
         },
         scales: {
-          x: {
-            title: {
-              display: true,
-              text: '일 (day)',
-              color: '#888780',
-              font: { size: 12 }
-            },
-            ticks: {
-              color: '#888780',
-              maxTicksLimit: 13,
-              font: { size: 11 }
-            },
-            grid: { color: 'rgba(136,135,128,0.08)' }
-          },
-          y: {
-            title: {
-              display: true,
-              text: '인구수 (명)',
-              color: '#888780',
-              font: { size: 12 }
-            },
-            ticks: {
-              color: '#888780',
-              font: { size: 11 },
-              callback: v => v >= 1000 ? Math.round(v / 1000) + 'k' : v
-            },
-            grid: { color: 'rgba(136,135,128,0.08)' }
-          }
+          x: { title: { display: true, text: '일 (day)', color: '#888780', font: { size: 12 } }, ticks: { color: '#888780', maxTicksLimit: 13, font: { size: 11 } }, grid: { color: 'rgba(136,135,128,0.08)' } },
+          y: { title: { display: true, text: '인구수 (명)', color: '#888780', font: { size: 12 } }, ticks: { color: '#888780', font: { size: 11 }, callback: v => v >= 1000 ? Math.round(v / 1000) + 'k' : v }, grid: { color: 'rgba(136,135,128,0.08)' } }
         }
       }
     });
   } else {
-    chart.data.labels          = labels;
+    chart.data.labels           = labels;
     chart.data.datasets[0].data = res.sArr;
     chart.data.datasets[1].data = res.eArr;
     chart.data.datasets[2].data = res.iArr;
@@ -751,21 +582,101 @@ function update() {
   }
 }
 
-// 슬라이더 이벤트 등록
 SLIDERS.forEach(id => {
   const el = document.getElementById('sl-' + id);
   if (el) el.addEventListener('input', update);
 });
-
-// 초기 실행
 update();
 </script>
 
-</div>
-</div>
+</div><!-- /seir wrapper -->
+</div><!-- /glass-card -->
 </div>
 </section>
 <!-- END: ExecutionImpact -->
+
+<!-- BEGIN: Solutions (시뮬레이션 이후 배치 — 내용 업데이트) -->
+<section class="py-24 bg-white" id="solutions">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="text-3xl font-black mb-4 text-dark">감염병 예방 솔루션</h2>
+<p class="text-gray-600 font-medium">시뮬레이션 결과를 바탕으로, 인플루엔자 예방의 최적 해법은 백신 접종을 중심으로 하고 유행기에는 마스크를 함께 사용하는 것입니다.</p>
+</div>
+<div class="flex gap-2">
+<div class="w-12 h-1 border-t-4 border-secondary"></div>
+<div class="w-6 h-1 border-t-4 border-black/10"></div>
+</div>
+</div>
+
+<!-- 핵심 결론 강조 배너 -->
+<div class="mb-10 p-6 rounded-2xl bg-secondary/10 border border-secondary/30 flex items-start gap-5">
+  <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shrink-0 shadow">
+    <span class="material-symbols-outlined text-dark text-2xl">verified</span>
+  </div>
+  <div>
+    <h3 class="text-lg font-black text-dark mb-1">시뮬레이션이 도출한 최적 전략</h3>
+    <p class="text-gray-700 text-sm leading-relaxed">
+      시뮬레이션 결과, 인플루엔자 예방에 <strong>가장 효과적인 요인은 백신</strong>이었으며, 여기에 <strong>마스크를 함께 적용</strong>하는 것이 가장 현실적이고 효율적인 해결책임을 확인하였습니다. 거리두기는 효과가 있었지만 일상의 불편이 크므로, 필요할 때만 제한적으로 활용하는 것이 적절합니다.
+    </p>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+  <!-- 솔루션 01: 백신 (핵심) -->
+  <div class="p-6 border-2 border-secondary bg-secondary/5 rounded-custom shadow-md relative">
+    <span class="absolute top-4 right-4 text-[10px] bg-secondary text-dark font-black px-2 py-0.5 rounded-full uppercase">핵심</span>
+    <span class="text-secondary text-xs font-bold font-mono mb-4 block">01 / VACCINE</span>
+    <h4 class="text-lg font-bold mb-3 text-dark">백신 접종 — 최우선 전략</h4>
+    <p class="text-gray-500 text-sm leading-relaxed">
+      백신은 감염될 수 있는 사람(감수성자, S) 자체를 줄여 확산을 가장 효과적으로 차단합니다. 시뮬레이션에서 백신 접종률을 높였을 때 피크 감염자 수와 최종 감염률이 가장 크게 감소하였으며, 이는 집단 면역 형성으로 이어져 취약계층도 간접 보호합니다.
+    </p>
+  </div>
+
+  <!-- 솔루션 02: 마스크 (보완) -->
+  <div class="p-6 border border-black/5 bg-surface rounded-custom hover:border-secondary transition-colors shadow-sm">
+    <span class="text-secondary text-xs font-bold font-mono mb-4 block">02 / MASK</span>
+    <h4 class="text-lg font-bold mb-3 text-dark">마스크 착용 — 백신 보완</h4>
+    <p class="text-gray-500 text-sm leading-relaxed">
+      마스크는 비말 전파를 추가로 낮춰 백신 효과를 강화합니다. 특히 유행기에 백신과 병행하면 감염 재생산지수(Rₑ)를 임계값(1.0) 아래로 낮추는 데 효과적이며, 착용 부담이 비교적 낮아 현실적으로 지속 가능한 방법입니다.
+    </p>
+  </div>
+
+  <!-- 솔루션 03: 거리두기 (제한적 활용) -->
+  <div class="p-6 border border-black/5 bg-surface rounded-custom hover:border-secondary transition-colors shadow-sm">
+    <span class="text-secondary text-xs font-bold font-mono mb-4 block">03 / DISTANCING</span>
+    <h4 class="text-lg font-bold mb-3 text-dark">사회적 거리두기 — 제한적 활용</h4>
+    <p class="text-gray-500 text-sm leading-relaxed">
+      거리두기는 접촉률을 낮춰 확산을 억제하는 효과가 있지만, 일상생활의 불편이 크고 지속하기 어렵습니다. 시뮬레이션 결과에서도 효과는 확인되었으나, 대규모 유행 시 단기 집중 적용 등 필요할 때만 선택적으로 사용하는 것이 가장 현실적입니다.
+    </p>
+  </div>
+
+</div>
+
+<!-- 전략 우선순위 요약 -->
+<div class="mt-10 grid grid-cols-3 gap-4 text-center">
+  <div class="p-5 rounded-custom bg-secondary/15 border border-secondary/30">
+    <div class="text-2xl font-black text-dark mb-1">1순위</div>
+    <div class="text-sm font-bold text-dark">백신 접종</div>
+    <div class="text-xs text-gray-500 mt-1">감수성자 직접 감소</div>
+  </div>
+  <div class="p-5 rounded-custom bg-secondary/8 border border-secondary/20">
+    <div class="text-2xl font-black text-dark mb-1">2순위</div>
+    <div class="text-sm font-bold text-dark">마스크 착용</div>
+    <div class="text-xs text-gray-500 mt-1">유행기 전파 차단 보완</div>
+  </div>
+  <div class="p-5 rounded-custom bg-black/3 border border-black/8">
+    <div class="text-2xl font-black text-dark mb-1">3순위</div>
+    <div class="text-sm font-bold text-dark">사회적 거리두기</div>
+    <div class="text-xs text-gray-500 mt-1">필요 시 단기 집중 적용</div>
+  </div>
+</div>
+
+</div>
+</section>
+<!-- END: Solutions -->
+
 <!-- BEGIN: CommunityBoard -->
 <section class="py-24 bg-surface" id="community">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -813,244 +724,6 @@ update();
 </section>
 <!-- END: CommunityBoard -->
 
-<!-- Chart.js for SEIR simulation -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script>
-
-/**
- * SEIR 모델 수치 적분 (오일러 방법, 일별 step)
- *
- * 상태변수:
- *   S : 감수성자 (Susceptible)
- *   E : 잠복기 (Exposed)
- *   I : 감염자 (Infectious)
- *   R : 회복/면역 (Recovered)
- *
- * 미분방정식:
- *   dS/dt = -β * S * I / N
- *   dE/dt =  β * S * I / N  - σ * E
- *   dI/dt =  σ * E           - γ * I
- *   dR/dt =  γ * I
- *
- * 개입 효과:
- *   β_eff = β * (1 - mask_reduction) * (1 - dist_reduction)
- *   초기 면역 인구 = vaxPct * VE * N  (R 초기값에 추가)
- *
- * 파라미터 (계절 독감 기본값):
- *   R₀ = 1.3   (Ferguson et al., Nature 2005)
- *   1/σ = 2일  (CDC Influenza Surveillance)
- *   1/γ = 4일  (WHO Influenza Fact Sheet)
- */
-function runSEIR(N, R0, sigmaInv, gammaInv, days, maskPct, distPct, vaxPct, VE, I0) {
-  const sigma = 1 / sigmaInv;
-  const gamma = 1 / gammaInv;
-
-  // 마스크: 최대 40% 감소 (Jefferson et al., Cochrane 2009)
-  // 거리두기: 최대 60% 감소 (Prem et al., Lancet Public Health 2020)
-  const maskEff  = 0.40;
-  const distEff  = 0.60;
-  const betaBase = R0 * gamma;
-  const reduction = (maskPct / 100 * maskEff) + (distPct / 100 * distEff);
-  const beta = betaBase * Math.max(1 - reduction, 0.05);
-
-  // 백신: 접종률 × 효능 비율만큼 초기 면역 인구
-  const immunized = Math.round(vaxPct / 100 * VE / 100 * N);
-
-  let S = N - I0 - immunized;
-  let E = 0;
-  let I = I0;
-  let R = immunized;
-
-  const sArr = [Math.round(S)];
-  const eArr = [Math.round(E)];
-  const iArr = [Math.round(I)];
-  const rArr = [Math.round(R)];
-
-  for (let d = 1; d <= days; d++) {
-    const newInfected  = beta * S * I / N;  // S → E
-    const newInfectious = sigma * E;         // E → I
-    const newRecovered  = gamma * I;         // I → R
-
-    S = Math.max(S - newInfected, 0);
-    E = Math.max(E + newInfected - newInfectious, 0);
-    I = Math.max(I + newInfectious - newRecovered, 0);
-    R = Math.min(R + newRecovered, N);
-
-    sArr.push(Math.round(S));
-    eArr.push(Math.round(E));
-    iArr.push(Math.round(I));
-    rArr.push(Math.round(R));
-  }
-
-  const peakI   = Math.max(...iArr);
-  const peakDay = iArr.indexOf(peakI);
-  const finalInfected = rArr[rArr.length - 1] - immunized; // 백신 면역 제외
-  const Re = beta / gamma * (S / N); // 시뮬레이션 종료 시점 기준
-
-  return { sArr, eArr, iArr, rArr, peakI, peakDay, finalInfected, Re };
-}
-
-// ---- 슬라이더 ID 목록 ----
-const SLIDERS = ['N','R0','sigma','gamma','days','mask','dist','vax','ve','I0'];
-
-let chart = null;
-
-function getVal(id) {
-  return parseFloat(document.getElementById('sl-' + id).value);
-}
-
-function update() {
-  const N       = getVal('N');
-  const R0      = getVal('R0');
-  const sigma   = getVal('sigma');   // 잠복기 (일)
-  const gamma   = getVal('gamma');   // 감염기간 (일)
-  const days    = getVal('days');
-  const mask    = getVal('mask');
-  const dist    = getVal('dist');
-  const vax     = getVal('vax');
-  const ve      = getVal('ve');
-  const I0      = getVal('I0');
-
-  // 슬라이더 표시값 업데이트
-  document.getElementById('v-N').textContent     = Math.round(N).toLocaleString('ko-KR');
-  document.getElementById('v-R0').textContent    = R0.toFixed(1);
-  document.getElementById('v-sigma').textContent = sigma + '일';
-  document.getElementById('v-gamma').textContent = gamma + '일';
-  document.getElementById('v-days').textContent  = days + '일';
-  document.getElementById('v-mask').textContent  = mask + '%';
-  document.getElementById('v-dist').textContent  = dist + '%';
-  document.getElementById('v-vax').textContent   = vax + '%';
-  document.getElementById('v-ve').textContent    = ve + '%';
-  document.getElementById('v-I0').textContent    = Math.round(I0).toLocaleString('ko-KR') + '명';
-
-  // SEIR 계산
-  const res = runSEIR(N, R0, sigma, gamma, days, mask, dist, vax, ve, I0);
-
-  // 지표 카드 업데이트
-  document.getElementById('m-peak').textContent    = Math.round(res.peakI).toLocaleString('ko-KR') + '명';
-  document.getElementById('m-peakday').textContent = res.peakDay + '일째';
-  document.getElementById('m-attack').textContent  = (res.finalInfected / N * 100).toFixed(1) + '%';
-  document.getElementById('m-re').textContent      = res.Re.toFixed(2);
-
-  const labels = Array.from({ length: days + 1 }, (_, i) => i);
-
-  if (!chart) {
-    chart = new Chart(document.getElementById('seirChart'), {
-      type: 'line',
-      data: {
-        labels,
-        datasets: [
-          {
-            label: '감수성자 (S)',
-            data: res.sArr,
-            borderColor: '#378ADD',
-            backgroundColor: 'rgba(55,138,221,0.07)',
-            borderWidth: 1.5,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: '잠복기 (E)',
-            data: res.eArr,
-            borderColor: '#EF9F27',
-            backgroundColor: 'rgba(239,159,39,0.07)',
-            borderWidth: 1.5,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: '감염자 (I)',
-            data: res.iArr,
-            borderColor: '#E24B4A',
-            backgroundColor: 'rgba(226,75,74,0.10)',
-            borderWidth: 2,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          },
-          {
-            label: '회복/면역 (R)',
-            data: res.rArr,
-            borderColor: '#1D9E75',
-            backgroundColor: 'rgba(29,158,117,0.07)',
-            borderWidth: 1.5,
-            pointRadius: 0,
-            fill: true,
-            tension: 0.3
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        animation: { duration: 150 },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            mode: 'index',
-            intersect: false,
-            callbacks: {
-              label: ctx =>
-                ' ' + ctx.dataset.label + ': ' +
-                Math.round(ctx.parsed.y).toLocaleString('ko-KR') + '명'
-            }
-          }
-        },
-        scales: {
-          x: {
-            title: {
-              display: true,
-              text: '일 (day)',
-              color: '#888780',
-              font: { size: 12 }
-            },
-            ticks: {
-              color: '#888780',
-              maxTicksLimit: 13,
-              font: { size: 11 }
-            },
-            grid: { color: 'rgba(136,135,128,0.08)' }
-          },
-          y: {
-            title: {
-              display: true,
-              text: '인구수 (명)',
-              color: '#888780',
-              font: { size: 12 }
-            },
-            ticks: {
-              color: '#888780',
-              font: { size: 11 },
-              callback: v => v >= 1000 ? Math.round(v / 1000) + 'k' : v
-            },
-            grid: { color: 'rgba(136,135,128,0.08)' }
-          }
-        }
-      }
-    });
-  } else {
-    chart.data.labels          = labels;
-    chart.data.datasets[0].data = res.sArr;
-    chart.data.datasets[1].data = res.eArr;
-    chart.data.datasets[2].data = res.iArr;
-    chart.data.datasets[3].data = res.rArr;
-    chart.update();
-  }
-}
-
-// 슬라이더 이벤트 등록
-SLIDERS.forEach(id => {
-  const el = document.getElementById('sl-' + id);
-  if (el) el.addEventListener('input', update);
-});
-
-// 초기 실행
-update();
-
-</script>
-
 <!-- Firebase SDK -->
 <script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
@@ -1096,12 +769,8 @@ update();
 
   const doLogin = async () => {
     const provider = new GoogleAuthProvider();
-    try {
-      await signInWithPopup(auth, provider);
-    } catch (e) {
-      console.error('로그인 오류:', e);
-      alert('로그인 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.');
-    }
+    try { await signInWithPopup(auth, provider); }
+    catch (e) { console.error('로그인 오류:', e); alert('로그인 중 오류가 발생했습니다.'); }
   };
   headerLoginBtn.addEventListener('click', doLogin);
   logoutBtn.addEventListener('click', () => signOut(auth));
@@ -1138,17 +807,12 @@ update();
     submitBtn.innerHTML = '<span class="material-symbols-outlined text-base animate-spin">autorenew</span> 저장 중...';
     try {
       await addDoc(collection(db, 'comments'), {
-        text,
-        authorName:   user.displayName || user.email,
-        authorPhoto:  user.photoURL || '',
-        authorId:     user.uid,
-        createdAt:    serverTimestamp()
+        text, authorName: user.displayName || user.email,
+        authorPhoto: user.photoURL || '', authorId: user.uid, createdAt: serverTimestamp()
       });
       commentInput.value = '';
-    } catch (e) {
-      console.error('댓글 저장 오류:', e);
-      alert('댓글 저장 중 오류가 발생했습니다.');
-    } finally {
+    } catch (e) { console.error('댓글 저장 오류:', e); alert('댓글 저장 중 오류가 발생했습니다.'); }
+    finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = '<span class="material-symbols-outlined text-base">send</span> 의견 남기기';
     }
@@ -1168,11 +832,7 @@ update();
     loadingEl.style.display = 'none';
     commentCount.textContent = `댓글 ${snapshot.size}개`;
     if (snapshot.empty) {
-      commentsList.innerHTML = `
-        <div class="text-center py-10 text-gray-400">
-          <span class="material-symbols-outlined text-4xl block mb-2">chat_bubble_outline</span>
-          <p class="text-sm font-medium">아직 댓글이 없습니다. 첫 번째로 의견을 남겨보세요!</p>
-        </div>`;
+      commentsList.innerHTML = `<div class="text-center py-10 text-gray-400"><span class="material-symbols-outlined text-4xl block mb-2">chat_bubble_outline</span><p class="text-sm font-medium">아직 댓글이 없습니다. 첫 번째로 의견을 남겨보세요!</p></div>`;
       return;
     }
     commentsList.innerHTML = snapshot.docs.map(docSnap => {
@@ -1183,46 +843,21 @@ update();
         ? `<img src="${d.authorPhoto}" alt="avatar" class="w-9 h-9 rounded-full border border-secondary/40 object-cover flex-shrink-0"/>`
         : `<div class="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 font-bold text-dark text-sm">${(d.authorName||'?')[0]}</div>`;
       const deleteBtn = canDelete
-        ? `<button onclick="deleteComment('${docSnap.id}')" class="text-[10px] text-red-400 hover:text-red-600 font-bold transition-colors flex items-center gap-1 ml-2">
-            <span class="material-symbols-outlined" style="font-size:13px">delete</span>삭제
-           </button>`
+        ? `<button onclick="deleteComment('${docSnap.id}')" class="text-[10px] text-red-400 hover:text-red-600 font-bold transition-colors flex items-center gap-1 ml-2"><span class="material-symbols-outlined" style="font-size:13px">delete</span>삭제</button>`
         : '';
-      const isAdminComment = d.authorId === ADMIN_UID;
-      const adminBadge = isAdminComment ? `<span class="text-[9px] bg-red-100 text-red-500 font-bold px-1 py-0.5 rounded ml-1">관리자</span>` : '';
-      return `
-        <div id="comment-${docSnap.id}" class="border-b border-black/5 pb-5 last:border-0 last:pb-0">
-          <div class="flex items-start gap-3">
-            ${avatar}
-            <div class="flex-1 min-w-0">
-              <div class="flex items-center justify-between gap-2 mb-1">
-                <div class="flex items-center min-w-0">
-                  <span class="font-bold text-sm text-dark truncate">${d.authorName || '익명'}</span>
-                  ${adminBadge}
-                </div>
-                <div class="flex items-center flex-shrink-0">
-                  <span class="text-[10px] text-gray-400 font-bold uppercase">${timeAgo(date)}</span>
-                  ${deleteBtn}
-                </div>
-              </div>
-              <p class="text-sm text-gray-600 leading-relaxed break-words">${d.text.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br/>')}</p>
-            </div>
-          </div>
-        </div>`;
+      const adminBadge = d.authorId === ADMIN_UID ? `<span class="text-[9px] bg-red-100 text-red-500 font-bold px-1 py-0.5 rounded ml-1">관리자</span>` : '';
+      return `<div id="comment-${docSnap.id}" class="border-b border-black/5 pb-5 last:border-0 last:pb-0"><div class="flex items-start gap-3">${avatar}<div class="flex-1 min-w-0"><div class="flex items-center justify-between gap-2 mb-1"><div class="flex items-center min-w-0"><span class="font-bold text-sm text-dark truncate">${d.authorName || '익명'}</span>${adminBadge}</div><div class="flex items-center flex-shrink-0"><span class="text-[10px] text-gray-400 font-bold uppercase">${timeAgo(date)}</span>${deleteBtn}</div></div><p class="text-sm text-gray-600 leading-relaxed break-words">${d.text.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br/>')}</p></div></div></div>`;
     }).join('');
   }, (error) => {
     console.error('댓글 로드 오류:', error);
-    loadingEl.innerHTML = '<p class="text-sm text-red-400 font-medium text-center py-4">댓글을 불러오지 못했습니다. Firebase 설정을 확인해주세요.</p>';
+    loadingEl.innerHTML = '<p class="text-sm text-red-400 font-medium text-center py-4">댓글을 불러오지 못했습니다.</p>';
   });
 
   window.deleteComment = async (docId) => {
     if (!currentUser) return;
     if (!confirm('댓글을 삭제할까요?')) return;
-    try {
-      await deleteDoc(doc(db, 'comments', docId));
-    } catch (e) {
-      console.error('삭제 오류:', e);
-      alert('삭제 중 오류가 발생했습니다.');
-    }
+    try { await deleteDoc(doc(db, 'comments', docId)); }
+    catch (e) { console.error('삭제 오류:', e); alert('삭제 중 오류가 발생했습니다.'); }
   };
 
   onValue(ref(rtdb, 'presence'), (snap) => {
@@ -1232,6 +867,7 @@ update();
   });
 </script>
 </main>
+
 <!-- BEGIN: Footer -->
 <footer class="py-12 border-t border-black/5 bg-white" data-purpose="footer">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1262,5 +898,5 @@ update();
             }
         });
     });
-  </script>
+</script>
 </body></html>
