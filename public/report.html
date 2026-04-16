@@ -56,7 +56,6 @@
     height: 2px;
     background: linear-gradient(90deg, #A1E5AB, transparent);
   }
-  /* 편집 모드 스타일 */
   [contenteditable="true"] {
     outline: none;
     border-radius: 4px;
@@ -70,9 +69,6 @@
     content: attr(data-placeholder);
     color: #aaa;
     pointer-events: none;
-  }
-  .edit-mode-badge {
-    animation: pulse 2s infinite;
   }
   @keyframes pulse {
     0%, 100% { opacity: 1; }
@@ -92,7 +88,6 @@
       <span class="font-bold text-xl tracking-tight text-dark">FLU<span class="text-secondary">LAB</span></span>
     </a>
     <div class="flex items-center gap-3">
-      <!-- 편집 모드 토글 (관리자만 사용) -->
       <button id="edit-toggle" class="hidden items-center gap-2 px-4 py-2 rounded-custom text-sm font-bold border border-black/10 hover:bg-surface transition-all">
         <span class="material-symbols-outlined text-base">edit</span>
         편집 모드
@@ -130,7 +125,7 @@
 
     <div class="section-divider mb-10"></div>
 
-    <!-- 수집 방법 -->
+    <!-- 수집 / 분석 / 검증 카드 -->
     <div class="grid md:grid-cols-3 gap-6 mb-10">
       <div class="glass-card rounded-custom p-6 border-t-4 border-t-secondary">
         <div class="w-10 h-10 bg-secondary/10 rounded-full flex items-center justify-center mb-4">
@@ -140,7 +135,7 @@
         <p id="data-collection" class="text-sm text-gray-600 leading-relaxed"
            contenteditable="false"
            data-placeholder="수집 방법을 입력하세요...">
-          WHO, CDC, 질병관리청(KDCA) 공공 보건 데이터베이스에서 최근 10년간의 인플루엔자 발생 통계, 백신 접종률, 변이 현황 데이터를 수집하였다. 또한 국내 학교 보건 통계 자료를 활용하여 연령별 감염 패턴을 분석하였다.
+          인플루엔자의 전파 특성, 잠복기, 감염 지속기간, 백신 효능, 마스크 및 사회적 거리두기 효과 등 기본 자료는 기존 논문과 WHO, CDC 등 공신력 있는 보건 자료를 바탕으로 수집하였다. 사이트의 시뮬레이션에서는 인구수 100,000명, 기본 재생산지수(R₀) 1.3, 잠복기 2일, 감염 지속기간 4일, 초기 감염자 10명, 시뮬레이션 기간 180일을 기준값으로 설정하였다.
         </p>
       </div>
       <div class="glass-card rounded-custom p-6 border-t-4 border-t-secondary">
@@ -151,7 +146,7 @@
         <p id="data-analysis" class="text-sm text-gray-600 leading-relaxed"
            contenteditable="false"
            data-placeholder="분석 방법을 입력하세요...">
-          수집된 데이터를 바탕으로 시계열 분석 및 상관관계 분석을 실시하였다. 바이러스 변이율과 감염 확산 속도 간의 관계를 통계 모델로 도출하고, 계절별·연령별 유행 패턴을 시각화하였다.
+          수집한 데이터를 바탕으로 SEIR 모델을 활용해 감수성자(S), 잠복기 감염자(E), 감염자(I), 회복자(R)의 변화를 시간 흐름에 따라 분석하였다. 마스크 착용률, 사회적 거리두기 수준, 백신 접종률, 백신 효능을 조절 변수로 두어 예방 정책에 따른 변화를 비교하였다.
         </p>
       </div>
       <div class="glass-card rounded-custom p-6 border-t-4 border-t-secondary">
@@ -162,7 +157,7 @@
         <p id="data-verify" class="text-sm text-gray-600 leading-relaxed"
            contenteditable="false"
            data-placeholder="검증 방법을 입력하세요...">
-          분석 결과의 신뢰성을 높이기 위해 복수의 데이터 출처를 교차 검증하였으며, 문헌 연구를 통해 기존 연구 결과와 비교·검토하는 과정을 거쳤다.
+          최대 감염자 수(피크), 피크 도달 시점, 최종 감염률(Attack Rate), 유효 재생산지수(Re)의 변화를 지표로 삼아 각 예방 수단의 효과를 비교하고, 백신·마스크·거리두기 중 최적의 조합을 도출하였다.
         </p>
       </div>
     </div>
@@ -176,10 +171,10 @@
       <div id="detail-process" class="text-gray-600 leading-relaxed text-sm space-y-3"
            contenteditable="false"
            data-placeholder="상세 진행 과정을 입력하세요...">
-        <p>1단계로 연구 주제 선정 후 관련 선행 연구를 탐색하고 연구 방향을 설정하였다.</p>
-        <p>2단계에서는 공신력 있는 기관의 오픈 데이터를 수집하고 전처리 과정을 거쳐 분석 가능한 형태로 가공하였다.</p>
-        <p>3단계에서 통계 분석 도구를 활용하여 데이터 간 상관관계를 도출하고 핵심 인사이트를 정리하였다.</p>
-        <p>4단계에서 분석 결과를 바탕으로 실질적인 해결 방안을 제시하고 기대 효과를 시뮬레이션하였다.</p>
+        <p>본 프로젝트는 인플루엔자의 확산 원인과 예방 효과를 분석하기 위해 문헌 자료 조사와 SEIR 시뮬레이션 데이터 분석을 함께 활용하였다.</p>
+        <p>먼저, 인플루엔자의 전파 특성, 잠복기, 감염 지속기간, 백신 효능, 마스크 및 사회적 거리두기 효과와 같은 기본 자료는 기존 논문과 공신력 있는 보건 자료를 바탕으로 수집하였다. 사이트의 시뮬레이션에서는 인구수 100,000명, 기본 재생산지수(R₀) 1.3, 잠복기 2일, 감염 지속기간 4일, 초기 감염자 10명, 시뮬레이션 기간 180일을 기준값으로 설정하였다. 또한 마스크 착용률, 사회적 거리두기 수준, 백신 접종률, 백신 효능을 조절 변수로 두어 예방 정책에 따른 변화를 비교하였다.</p>
+        <p>수집한 데이터를 바탕으로 SEIR 모델을 활용해 감수성자(S), 잠복기 감염자(E), 감염자(I), 회복자(R)의 변화를 시간 흐름에 따라 분석하였다. 분석 과정에서는 각 예방 요인의 변화에 따라 최대 감염자 수(피크), 피크 도달 시점, 최종 감염률(Attack Rate), 유효 재생산지수(Re)가 어떻게 달라지는지를 확인하였다. 이를 통해 어떤 예방 수단이 감염 확산을 가장 효과적으로 줄이는지 비교하였고, 백신·마스크·거리두기 중 최적의 조합을 도출하였다.</p>
+        <p>또한 사이트 내 커뮤니티 게시판 기능을 통해 사용자 의견과 제안을 수집할 수 있도록 하여, 연구 결과에 대한 사회적 인식과 실제 적용 가능성도 함께 살펴보도록 설계하였다.</p>
       </div>
     </div>
 
@@ -210,23 +205,19 @@
           <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">1</div>
           <div>
             <h3 id="member1-name" class="font-black text-lg text-dark"
-                contenteditable="false"
-                data-placeholder="이름">팀원 1</h3>
+                contenteditable="false" data-placeholder="이름">팀원 1</h3>
             <p id="member1-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
-               contenteditable="false"
-               data-placeholder="담당 역할">담당 역할</p>
+               contenteditable="false" data-placeholder="담당 역할">담당 역할</p>
           </div>
         </div>
         <div class="section-divider mb-5"></div>
         <div>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
           <p id="member1-task" class="text-sm text-gray-600 leading-relaxed mb-4"
-             contenteditable="false"
-             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+             contenteditable="false" data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
           <p id="member1-review" class="text-sm text-gray-600 leading-relaxed"
-             contenteditable="false"
-             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+             contenteditable="false" data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
         </div>
       </div>
 
@@ -236,23 +227,19 @@
           <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">2</div>
           <div>
             <h3 id="member2-name" class="font-black text-lg text-dark"
-                contenteditable="false"
-                data-placeholder="이름">팀원 2</h3>
+                contenteditable="false" data-placeholder="이름">팀원 2</h3>
             <p id="member2-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
-               contenteditable="false"
-               data-placeholder="담당 역할">담당 역할</p>
+               contenteditable="false" data-placeholder="담당 역할">담당 역할</p>
           </div>
         </div>
         <div class="section-divider mb-5"></div>
         <div>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
           <p id="member2-task" class="text-sm text-gray-600 leading-relaxed mb-4"
-             contenteditable="false"
-             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+             contenteditable="false" data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
           <p id="member2-review" class="text-sm text-gray-600 leading-relaxed"
-             contenteditable="false"
-             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+             contenteditable="false" data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
         </div>
       </div>
 
@@ -262,23 +249,19 @@
           <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">3</div>
           <div>
             <h3 id="member3-name" class="font-black text-lg text-dark"
-                contenteditable="false"
-                data-placeholder="이름">팀원 3</h3>
+                contenteditable="false" data-placeholder="이름">팀원 3</h3>
             <p id="member3-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
-               contenteditable="false"
-               data-placeholder="담당 역할">담당 역할</p>
+               contenteditable="false" data-placeholder="담당 역할">담당 역할</p>
           </div>
         </div>
         <div class="section-divider mb-5"></div>
         <div>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
           <p id="member3-task" class="text-sm text-gray-600 leading-relaxed mb-4"
-             contenteditable="false"
-             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+             contenteditable="false" data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
           <p id="member3-review" class="text-sm text-gray-600 leading-relaxed"
-             contenteditable="false"
-             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+             contenteditable="false" data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
         </div>
       </div>
 
@@ -288,23 +271,19 @@
           <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-black text-dark text-lg flex-shrink-0">4</div>
           <div>
             <h3 id="member4-name" class="font-black text-lg text-dark"
-                contenteditable="false"
-                data-placeholder="이름">팀원 4</h3>
+                contenteditable="false" data-placeholder="이름">팀원 4</h3>
             <p id="member4-role" class="text-xs font-bold text-secondary uppercase tracking-wider"
-               contenteditable="false"
-               data-placeholder="담당 역할">담당 역할</p>
+               contenteditable="false" data-placeholder="담당 역할">담당 역할</p>
           </div>
         </div>
         <div class="section-divider mb-5"></div>
         <div>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">맡은 역할</p>
           <p id="member4-task" class="text-sm text-gray-600 leading-relaxed mb-4"
-             contenteditable="false"
-             data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
+             contenteditable="false" data-placeholder="맡은 역할을 입력하세요...">역할 내용을 입력하세요.</p>
           <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">느낀점 · 배운점</p>
           <p id="member4-review" class="text-sm text-gray-600 leading-relaxed"
-             contenteditable="false"
-             data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
+             contenteditable="false" data-placeholder="소감을 입력하세요...">소감을 입력하세요.</p>
         </div>
       </div>
 
@@ -321,7 +300,6 @@
         <span class="font-bold tracking-tight text-dark uppercase">Flu<span class="text-secondary">Lab</span> 2024</span>
       </div>
       <div class="text-gray-500 text-sm font-medium">과학 및 보건 연구 프로젝트 • 학술적 우수성 지향</div>
-
     </div>
   </div>
 </footer>
@@ -350,7 +328,6 @@
   const editableEls = document.querySelectorAll('[contenteditable]');
   let isEditMode = false;
 
-  // Firestore에서 저장된 내용 불러오기
   async function loadContent() {
     try {
       const docSnap = await getDoc(doc(db, 'report', 'content'));
@@ -365,7 +342,6 @@
     }
   }
 
-  // Firestore에 저장
   async function saveContent() {
     const data = {};
     editableEls.forEach(el => { data[el.id] = el.innerHTML; });
@@ -377,7 +353,6 @@
     }
   }
 
-  // 토스트 알림
   function showToast(msg) {
     const t = document.createElement('div');
     t.className = 'fixed bottom-6 right-6 bg-dark text-white px-5 py-3 rounded-custom font-bold text-sm z-50 shadow-xl';
@@ -386,7 +361,6 @@
     setTimeout(() => t.remove(), 2500);
   }
 
-  // 편집 모드 토글
   editToggle.addEventListener('click', () => {
     isEditMode = !isEditMode;
     editableEls.forEach(el => {
@@ -402,7 +376,6 @@
     }
   });
 
-  // 관리자 로그인 감지
   onAuthStateChanged(auth, (user) => {
     if (user && user.uid === ADMIN_UID) {
       editToggle.classList.remove('hidden');
